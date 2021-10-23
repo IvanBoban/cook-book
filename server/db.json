@@ -1,0 +1,9 @@
+{
+  "recepies": [
+    {
+      "id": "1",
+      "name": "Recipe one",
+      "ingredients": [{ "name": "Tomato", "quantity": 1 }]
+    }
+  ]
+}
