@@ -28,7 +28,13 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "use-encapsulation"
+    ],
+    "rules": {
+      "use-encapsulation/prefer-custom-hooks": "error"
+    }
   },
   "browserslist": {
     "production": [
@@ -43,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.1"
+    "@types/react-router-dom": "^5.3.1",
+    "eslint-plugin-use-encapsulation": "^1.0.0"
   }
 }
