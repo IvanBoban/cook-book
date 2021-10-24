@@ -1,4 +1,5 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { NOT_FOUND_PAGE } from "./constants";
 import routes from "./routeConfig";
 export default function Router() {
   return (
@@ -14,6 +15,11 @@ export default function Router() {
           />
         );
       })}
+      <Route
+        path="*"
+        key="unsupported route"
+        render={() => <Redirect to={NOT_FOUND_PAGE} />}
+      />
     </Switch>
   );
 }
