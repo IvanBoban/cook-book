@@ -1,10 +1,12 @@
 import "./App.css";
-
+import { BrowserRouter } from "react-router-dom";
+import Router from "./router";
 function App() {
   return (
     <div className="App">
-      My cook book
-      <a href="http://asd.com">dasdadasd</a>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </div>
   );
 }
