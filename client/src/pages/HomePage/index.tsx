@@ -4,7 +4,7 @@ import useHomePage from "./useHomePage";
 
 export default function HomePage() {
   const [isLoading, { disableLoading }] = useLoading(true);
-  useHomePage(disableLoading);
+  const { recipes } = useHomePage(disableLoading);
 
   if (isLoading) {
     return <div>Loading</div>;
