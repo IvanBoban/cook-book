@@ -32,6 +32,8 @@ Note: The server is configured to run on `localhost:3001` if you wish to change 
 
    `yarn install`
 
-4. Run the client
+4. Create a `.env` file inside the client directory following the template inside the `.env.dist`
+
+5. Run the client
 
    `yarn start`
