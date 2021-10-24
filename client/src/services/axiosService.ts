@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 
-export default class APIService {
+export default class AxiosService {
   instance: AxiosInstance;
   constructor() {
     this.instance = axios.create({
@@ -31,7 +31,7 @@ export default class APIService {
 
 interface GetParams {
   resource: string;
-  params: object;
+  params?: object;
 }
 
 interface PostParams {
