@@ -4,7 +4,7 @@ export default class AxiosService {
   instance: AxiosInstance;
   constructor() {
     this.instance = axios.create({
-      baseURL: process.env.REACT_APP_API_SERVICE,
+      baseURL: process.env.REACT_APP_SERVER_ENDPOINT,
     });
   }
 
