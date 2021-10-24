@@ -1,9 +1,10 @@
 {
   "recipes": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Recipe one",
-      "ingredients": [{ "name": "Tomato", "quantity": 1 }]
+      "ingredients": [{ "name": "Tomato", "quantity": 1 }],
+      "ratings": [3, 4, 5, 1, 2, 3, 4, 5]
     }
   ]
 }
