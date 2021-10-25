@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, useParams } from "react-router";
-import Recipe from "../../model/Recipie";
+import Recipe from "../../model/Recipe";
 import { ERROR_PAGE } from "../../router/constants";
 import APIService from "../../services/apiService";
 
@@ -13,7 +13,7 @@ export default function useRecipePage(disableLoading: () => void) {
     const apiService = new APIService();
 
     try {
-      const response = await apiService.getSingleRecipe(id);
+      const response = await apiService.getSingleRecipe(parseInt(id));
       if (response.data) {
         setRecipe(response.data as Recipe);
         disableLoading();

@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Recipe from "../../model/Recipie";
+import Recipe from "../../model/Recipe";
 import { ERROR_PAGE } from "../../router/constants";
 import APIService from "../../services/apiService";
 
