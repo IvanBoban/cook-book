@@ -13,11 +13,15 @@ export default class AxiosService {
   }
 
   post({ resource, data }: PostParams) {
-    return this.instance.post(resource, data);
+    return this.instance.post(resource, data, {
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   patch({ resource, data }: PatchParams) {
-    return this.instance.patch(resource, data);
+    return this.instance.patch(resource, data, {
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   put({ resource, data }: PutParams) {
