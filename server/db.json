@@ -2,9 +2,29 @@
   "recipes": [
     {
       "id": 1,
-      "name": "Recipe one",
-      "ingredients": [{ "name": "Tomato", "quantity": 1 }],
-      "ratings": [3, 4, 5, 1, 2, 3, 4, 5]
+      "name": "Soup 2.0",
+      "numberOfServings": 3,
+      "cookingTime": 40,
+      "ingredients": [
+        {
+          "name": "Tomato",
+          "quantity": 1
+        }
+      ],
+      "ratings": [
+        3,
+        4,
+        5,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "preparationsSteps": [
+        "Remove water",
+        "Patch water"
+      ]
     }
   ]
 }
