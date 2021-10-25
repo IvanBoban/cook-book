@@ -9,5 +9,8 @@ export default function HomePage() {
   if (isLoading) {
     return <div>Loading</div>;
   }
+  if (recipes.length === 0) {
+    return <div>No recipes yet go and create some!</div>;
+  }
   return <div>Home page</div>;
 }
