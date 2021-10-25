@@ -1,1 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
+
+body {
+  margin: 0;
+}
+.App {
+  min-height: 100vh;
+}
