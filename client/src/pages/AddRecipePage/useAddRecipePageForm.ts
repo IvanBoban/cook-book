@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import useLoading from "../../hooks/useLoading";
-import CreateRecipeDTO from "../../model/CreateRecipeDTO";
+import { CreateRecipeForm } from "../../model/CreateRecipeDTO";
 import APIService from "../../services/apiService";
 import AddRecipePageFormSchema from "./AddRecipePageFormSchema";
 import React from "react";
@@ -62,11 +62,14 @@ export default function useAddRecipePageFrom() {
     );
   };
 
-  async function submitForm(values: CreateRecipeDTO) {
+  async function submitForm(values: CreateRecipeForm) {
     enableLoading();
     const apiService = new APIService();
     try {
-      const response = await apiService.createRecipe(values);
+      const response = await apiService.createRecipe({
+        ...values,
+        ratings: [],
+      });
       if (response.status === 201) {
         alert("yaaaay you did it");
         formik.resetForm();
