@@ -1,10 +1,8 @@
 import React from "react";
-import useLoading from "../../hooks/useLoading";
-import useRecipePage from "./useRecipePage";
+import useFetchRecipe from "../../hooks/useFetchRecipe";
 
 export default function RecipePage() {
-  const [isLoading, { disableLoading }] = useLoading(true);
-  const { recipe } = useRecipePage(disableLoading);
+  const { isLoading, recipeData } = useFetchRecipe();
 
   if (isLoading) {
     return <div>Loading...</div>;
