@@ -3,7 +3,6 @@ import useLoading from "../../hooks/useLoading";
 import CreateRecipeDTO from "../../model/CreateRecipeDTO";
 import APIService from "../../services/apiService";
 import AddRecipePageFormSchema from "./AddRecipePageFormSchema";
-
 import React from "react";
 
 export default function useAddRecipePageFrom() {
@@ -19,7 +18,6 @@ export default function useAddRecipePageFrom() {
     },
     validationSchema: AddRecipePageFormSchema,
     onSubmit: (values) => {
-      console.log(values);
       submitForm(values);
     },
   });
