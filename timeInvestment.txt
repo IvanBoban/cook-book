@@ -1,0 +1,23 @@
+project setup (server, router setup, services setup): 2h 
+create recipe page: 2h
+edit recipe page + delete recipe feature: 2h
+rate recipe: 45m
+
+TODO:
+
+Styling
+
+Update rate recipe with icons and non static value
+
+Error handling
+
+Update README.md
+
+Refactor if needed
+
+
+Total: 
+
+6h 45min
+
+
