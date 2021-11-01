@@ -2,8 +2,8 @@ import Ingredient from "./Ingredient";
 
 export default interface CreateRecipeDTO {
   name: string;
-  ingredients?: [Ingredient];
+  ingredients?: Ingredient[];
   numberOfServings: number;
   cookingTime: number;
-  preparationSteps: [string];
+  preparationSteps: string[];
 }
