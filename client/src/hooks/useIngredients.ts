@@ -21,6 +21,9 @@ export default function useIngredients(
         setIngredients([...ingredients, ingredient]);
       },
       removeIngredient: (index: number) => {
+        if (ingredients.length === 1) {
+          return;
+        }
         setIngredients(
           ingredients.filter((_, itemIndex) => itemIndex !== index)
         );

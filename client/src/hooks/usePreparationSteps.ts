@@ -17,6 +17,9 @@ export default function usePreparationSteps(
         setPreparationSteps([...preparationSteps, ""]);
       },
       removePreparationStep: (index: number) => {
+        if (preparationSteps.length === 1) {
+          return;
+        }
         setPreparationSteps(
           preparationSteps.filter((_, itemIndex) => itemIndex !== index)
         );
