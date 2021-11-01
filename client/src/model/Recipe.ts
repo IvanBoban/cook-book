@@ -5,6 +5,7 @@ export default interface Recipe {
   name: string;
   cookingTime: number;
   numberOfServings: number;
-  ingredients: [Ingredient];
-  ratings: [number];
+  ingredients: Ingredient[];
+  preparationSteps: string[];
+  ratings: number[];
 }
