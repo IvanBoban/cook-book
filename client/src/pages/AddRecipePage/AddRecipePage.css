@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main fieldset {
+  border: none;
+}
+
+main input {
+  display: block;
+}
