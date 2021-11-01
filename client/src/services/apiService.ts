@@ -40,4 +40,12 @@ export default class APIService {
       data: DTO,
     });
   }
+
+  rateRecipe(id: number, ratings: number[]) {
+    console.log(ratings);
+    return this.axiosService.patch({
+      resource: `/recipes/${id}`,
+      data: { ratings: ratings },
+    });
+  }
 }
