@@ -1,8 +1,8 @@
 import EditRecipePageForm from "./EditRecipePageForm";
-import useEditRecipePage from "./useEditRecipePage";
+import useFetchRecipe from "../../hooks/useFetchRecipe";
 
 export default function EditRecipePage() {
-  const { isLoading, recipeData } = useEditRecipePage();
+  const { isLoading, recipeData } = useFetchRecipe();
 
   if (isLoading) {
     return <div>...Loading</div>;

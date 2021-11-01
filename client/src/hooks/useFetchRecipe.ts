@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router";
-import useLoading from "../../hooks/useLoading";
-import Recipe from "../../model/Recipe";
-import APIService from "../../services/apiService";
+import useLoading from "./useLoading";
+import Recipe from "../model/Recipe";
+import APIService from "../services/apiService";
 
-export default function useEditRecipePage() {
+export default function useFetchRecipe() {
   const [isLoading, { disableLoading }] = useLoading(true);
   const [recipeData, setRecipeData] = React.useState<Recipe | null>(null);
   const queryParams = useParams<{ id: string }>();
