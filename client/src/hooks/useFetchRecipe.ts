@@ -16,7 +16,6 @@ export default function useFetchRecipe() {
         parseInt(queryParams.id)
       );
       if (response.data) {
-        console.log(response.data);
         setRecipeData(response.data as Recipe);
         disableLoading();
         return;
