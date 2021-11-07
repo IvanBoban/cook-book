@@ -1,5 +1,5 @@
 import React from "react";
-import useSearchBar from "./useSearchbar";
+import useSearchBar from "./useSearchBar";
 
 export default function SearchBar() {
   const { recipes, searchRecipes } = useSearchBar();
