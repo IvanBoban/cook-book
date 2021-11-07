@@ -1,6 +1,5 @@
 import { Container } from "@mui/material";
-import React from "react";
-import PageLayout from "../../components/PageLayout";
+import { PageLayout } from "../../components";
 import useLoading from "../../hooks/useLoading";
 import useHomePage from "./useHomePage";
 

@@ -1,12 +1,12 @@
 import React from "react";
-import Recipe from "../../model/Recipe";
-import APIService from "../../services/apiService";
+import Recipe from "../../../../model/Recipe";
+import APIService from "../../../../services/apiService";
 
 export default function useSearchBar() {
   const [recipes, setRecipes] = React.useState<Recipe[]>([]);
 
   const searchRecipes = React.useCallback(
-    async (event: React.FormEvent<HTMLInputElement>) => {
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
       const apiService = new APIService();
 
       try {

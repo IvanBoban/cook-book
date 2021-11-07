@@ -8,10 +8,16 @@ import SideDrawer from "./SideDrawer";
 import { Link } from "react-router-dom";
 import { AddCircle } from "@mui/icons-material";
 import { ADD_RECIPE_PAGE } from "../../router/constants";
-import SearchBar from "../SearchBar";
+import SearchIcon from "@mui/icons-material/Search";
+import { Typography } from "@mui/material";
+import useSearchDialog from "./useSearchDialog";
+import SearchDialog from "./SearchDialog";
 
 export default function AppHeader() {
-  const [isOpen, { openSideDrawer, closeSideDrawer }] = useSideDrawer();
+  const [isSideDrawerOpen, { openSideDrawer, closeSideDrawer }] =
+    useSideDrawer();
+  const [isSearchDialogOpen, { openSearchDialog, closeSearchDialog }] =
+    useSearchDialog();
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -27,11 +33,13 @@ export default function AppHeader() {
             >
               <MenuIcon />
             </IconButton>
-            <Box sx={{ flexGrow: 2 }}>
-              <SearchBar />
-            </Box>
+            <Typography variant="h6"> Cook book</Typography>
+
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton onClick={openSearchDialog}>
+                <SearchIcon />
+              </IconButton>
               <IconButton component={Link} to={ADD_RECIPE_PAGE}>
                 <AddCircle />
               </IconButton>
@@ -39,7 +47,8 @@ export default function AppHeader() {
           </Toolbar>
         </AppBar>
       </Box>
-      <SideDrawer isOpen={isOpen} closeFunction={closeSideDrawer} />
+      <SearchDialog isOpen={isSearchDialogOpen} />
+      <SideDrawer isOpen={isSideDrawerOpen} closeFunction={closeSideDrawer} />
     </>
   );
 }
