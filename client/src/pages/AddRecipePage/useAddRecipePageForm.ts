@@ -17,7 +17,7 @@ export default function useAddRecipePageFrom() {
       preparationSteps: [""],
     },
     validationSchema: AddRecipePageFormSchema,
-    onSubmit: (values) => {
+    onSubmit: (values: CreateRecipeForm) => {
       submitForm(values);
     },
   });
@@ -36,7 +36,8 @@ export default function useAddRecipePageFrom() {
     formik.setFieldValue(
       "ingredients",
       formik.values.ingredients.filter(
-        (_, index) => index !== parseInt(event.currentTarget.dataset.index!)
+        (_: any, index: number) =>
+          index !== parseInt(event.currentTarget.dataset.index!)
       )
     );
   };
@@ -57,7 +58,8 @@ export default function useAddRecipePageFrom() {
     formik.setFieldValue(
       "preparationSteps",
       formik.values.preparationSteps.filter(
-        (_, index) => index !== parseInt(event.currentTarget.dataset.index!)
+        (_: any, index: number) =>
+          index !== parseInt(event.currentTarget.dataset.index!)
       )
     );
   };

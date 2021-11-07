@@ -42,10 +42,15 @@ export default class APIService {
   }
 
   rateRecipe(id: number, ratings: number[]) {
-    console.log(ratings);
     return this.axiosService.patch({
       resource: `/recipes/${id}`,
       data: { ratings: ratings },
+    });
+  }
+
+  searchRecipes(searchParam: string) {
+    return this.axiosService.get({
+      resource: `/recipes?q=${searchParam}`,
     });
   }
 }
