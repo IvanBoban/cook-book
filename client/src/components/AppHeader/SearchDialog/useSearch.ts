@@ -5,10 +5,14 @@ import APIService from "../../../services/apiService";
 export default function useSearch() {
   const [recipes, setRecipes] = React.useState<Recipe[]>([]);
 
+  const resetSearch = () => {
+    setRecipes([]);
+  };
+
   const searchRecipes = React.useCallback(
     async (event: React.ChangeEvent<HTMLInputElement>) => {
       if (!event.currentTarget.value) {
-        setRecipes([]);
+        resetSearch();
         return;
       }
 
@@ -30,5 +34,5 @@ export default function useSearch() {
     []
   );
 
-  return { recipes, searchRecipes };
+  return { recipes, searchRecipes, resetSearch };
 }

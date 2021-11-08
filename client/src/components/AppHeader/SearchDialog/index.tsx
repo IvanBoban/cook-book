@@ -10,10 +10,14 @@ interface SearchDialogProps {
 }
 
 export default function SearchDialog(props: SearchDialogProps) {
-  const { recipes, searchRecipes } = useSearch();
+  const { recipes, searchRecipes, resetSearch } = useSearch();
 
   return (
-    <Dialog open={props.isOpen} onClose={props.closeDialog}>
+    <Dialog
+      open={props.isOpen}
+      onClose={props.closeDialog}
+      TransitionProps={{ onExited: resetSearch }}
+    >
       <DialogTitle>
         Search recipe
         <SearchBar searchRecipes={searchRecipes} />
@@ -34,7 +38,7 @@ function RecipeMapper(props: RecipeMapperProps) {
   console.log(recipes);
   if (recipes.length === 0) {
     return (
-      <Typography variant="body1"> No recipes for that search </Typography>
+      <Typography variant="body1"> Search by name or ingredient </Typography>
     );
   }
 

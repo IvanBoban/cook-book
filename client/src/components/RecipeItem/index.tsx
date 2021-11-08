@@ -1,6 +1,4 @@
-import { Container, Grid } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
+import { Container, Grid, Rating, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Recipe from "../../model/Recipe";
 import { RECIPE_PAGE } from "../../router/constants";
@@ -11,17 +9,44 @@ interface RecipeItemProps {
 export default function RecipeItem(props: RecipeItemProps) {
   const { recipe } = props;
   return (
-    <Box component={Link} to={RECIPE_PAGE.replace(":id", recipe.id.toString())}>
-      <Container>
-        <Grid container>
-          <Grid item xs={4}>
-            {recipe.name}
-          </Grid>
-          <Grid item xs={8}>
-            {recipe.numberOfServings}
-          </Grid>
+    <Container
+      component={Link}
+      to={RECIPE_PAGE.replace(":id", recipe.id.toString())}
+      sx={{
+        marginBottom: "10px",
+        textDecoration: "none",
+        color: "inherit",
+        border: "2px solid black",
+      }}
+    >
+      <Grid
+        container
+        sx={{ display: "flex", alignItems: "center", padding: "20px" }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          sx={{ display: "flex", flexDirection: "column" }}
+        >
+          <Typography variant="h6">{recipe.name}</Typography>
         </Grid>
-      </Container>
-    </Box>
+        <Grid item xs={12} sm={4}>
+          <Typography variant="body1">
+            Number of servings: {recipe.numberOfServings}
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Rating
+            name={`recipe-${recipe.id}-rating`}
+            value={recipe.ratings.reduce(
+              (previousValue, currentValue) => previousValue + currentValue,
+              0
+            )}
+            readOnly
+          />
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
