@@ -47,7 +47,10 @@ export default function AppHeader() {
           </Toolbar>
         </AppBar>
       </Box>
-      <SearchDialog isOpen={isSearchDialogOpen} />
+      <SearchDialog
+        isOpen={isSearchDialogOpen}
+        closeDialog={closeSearchDialog}
+      />
       <SideDrawer isOpen={isSideDrawerOpen} closeFunction={closeSideDrawer} />
     </>
   );

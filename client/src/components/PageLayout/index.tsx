@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import React from "react";
 import AppHeader from "../AppHeader";
 
@@ -8,8 +9,7 @@ export default function PageLayout(props: PageLayoutProps) {
   return (
     <>
       <AppHeader />
-
-      {props.children}
+      <Container sx={{ padding: "20px" }}> {props.children}</Container>
     </>
   );
 }

@@ -1,12 +1,17 @@
 import React from "react";
-import Recipe from "../../../../model/Recipe";
-import APIService from "../../../../services/apiService";
+import Recipe from "../../../model/Recipe";
+import APIService from "../../../services/apiService";
 
-export default function useSearchBar() {
+export default function useSearch() {
   const [recipes, setRecipes] = React.useState<Recipe[]>([]);
 
   const searchRecipes = React.useCallback(
     async (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (!event.currentTarget.value) {
+        setRecipes([]);
+        return;
+      }
+
       const apiService = new APIService();
 
       try {
@@ -24,10 +29,6 @@ export default function useSearchBar() {
     },
     []
   );
-
-  React.useEffect(() => {
-    console.log(recipes);
-  }, [recipes]);
 
   return { recipes, searchRecipes };
 }

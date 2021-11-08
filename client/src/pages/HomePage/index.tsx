@@ -1,5 +1,5 @@
-import { Container } from "@mui/material";
 import { PageLayout } from "../../components";
+import RecipeItem from "../../components/RecipeItem";
 import useLoading from "../../hooks/useLoading";
 import useHomePage from "./useHomePage";
 
@@ -17,7 +17,9 @@ export default function HomePage() {
 
   return (
     <PageLayout>
-      <Container></Container>
+      {recipes.map((recipe) => (
+        <RecipeItem key={recipe.name} recipe={recipe} />
+      ))}
     </PageLayout>
   );
 }
